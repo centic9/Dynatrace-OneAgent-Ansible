@@ -1,12 +1,12 @@
 ---
 - name: set url for latest version
   set_fact:
-    dynatrace_oneagent_installer_url: https://{{ dynatrace_environment_url }}/api/v1/deployment/installer/agent/{{ dynatrace_oneagent_install_url_key }}/default/latest?Api-Token={{ dynatrace_paas_token }}&arch=x86
+    dynatrace_oneagent_installer_url: https://{{ dynatrace_environment_url }}/api/v1/deployment/installer/agent/{{ dynatrace_oneagent_install_url_key }}/default/latest?Api-Token={{ dynatrace_paas_token }}&arch={{ dynatrace_oneagent_arch }}
   when: dynatrace_oneagent_version == 'latest'
 
 - name: set url for specific version
   set_fact:
-    dynatrace_oneagent_installer_url: https://{{ dynatrace_environment_url }}/api/v1/deployment/installer/agent/{{ dynatrace_oneagent_install_url_key }}/default/version/{{ dynatrace_oneagent_version }}?Api-Token={{ dynatrace_paas_token }}&arch=x86
+    dynatrace_oneagent_installer_url: https://{{ dynatrace_environment_url }}/api/v1/deployment/installer/agent/{{ dynatrace_oneagent_install_url_key }}/default/version/{{ dynatrace_oneagent_version }}?Api-Token={{ dynatrace_paas_token }}&arch={{ dynatrace_oneagent_arch }}
   when: dynatrace_oneagent_version != 'latest'
 
 - name: check if oneagent is installed | linux

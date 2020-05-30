@@ -49,6 +49,7 @@ The following variables are available in `defaults/main/` and can be overriden:
 | `dynatrace_oneagent_state:` | `"started"` | Set initial oneagent state. Recommended values: `started` or `stopped`
 | `dynatrace_oneagent_restart_state` | `"restarted"` | Set oneagent state when configuration changes are made. Recommended values: `restarted` or `reloaded`
 | `dynatrace_oneagent_package_state` | `"present"` | oneagent package state; use `present` to make sure it's installed, or `latest`
+| `dynatrace_oneagent_arch` | `"x86"` | Choose "arm" to try the early adopter release for ARM architecture
 
 Example Playbook
 ----------------
